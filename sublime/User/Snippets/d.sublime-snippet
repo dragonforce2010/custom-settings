@@ -1,0 +1,10 @@
+<snippet>
+<content><![CDATA[
+	<div class="$1">
+		<p>The ${2:cat} is ${3:fast}</p>
+	</div> <!-- /${1/\*//} -->
+]]></content>
+<tabTrigger>d</tabTrigger>
+<description>test</description>
+<scope>text.html</scope>
+</snippet>
