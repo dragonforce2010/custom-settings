@@ -78,11 +78,13 @@
     },
     {
         "key": "cmd+left",
-        "command": "workbench.action.previousEditor"
+        "command": "workbench.action.previousEditor",
+        "when": "editorTextFocus"
     },
     {
         "key": "cmd+right",
-        "command": "workbench.action.nextEditor"
+        "command": "workbench.action.nextEditor",
+        "when": "editorTextFocus"
     },
     {
         "key": "alt+f",
@@ -314,5 +316,53 @@
         "key": "alt+cmd+c",
         "command": "-copyFilePath",
         "when": "explorerViewletFocus && explorerViewletVisible"
+    },
+    {
+        "key": "ctrl+shift+r",
+        "command": "workbench.action.quickOpen"
+    },
+    {
+        "key": "ctrl+shift+u",
+        "command": "editor.action.transformToUppercase"
+    },
+    {
+        "key": "ctrl+shift+l",
+        "command": "editor.action.transformToLowercase"
+    },
+    {
+        "key": "cmd+i",
+        "command": "workbench.action.closeOtherEditors"
+    },
+    {
+        "key": "alt+cmd+t",
+        "command": "-workbench.action.closeOtherEditors"
+    },
+    {
+        "key": "alt+left",
+        "command": "workbench.action.navigateBack"
+    },
+    {
+        "key": "ctrl+-",
+        "command": "-workbench.action.navigateBack"
+    },
+    {
+        "key": "alt+right",
+        "command": "workbench.action.navigateForward"
+    },
+    {
+        "key": "ctrl+shift+-",
+        "command": "-workbench.action.navigateForward"
+    },
+    {
+        "key": "alt+t",
+        "command": "terminal.open"
+    },
+    {
+        "key": "ctrl+alt+o",
+        "command": "-terminal.open"
+    },
+    {
+        "key": "shift+t shift+t",
+        "command": "workbench.action.quickOpenNavigateNextInTerminalPicker"
     }
 ]

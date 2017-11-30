@@ -1,0 +1,10 @@
+{
+    "workbench.colorTheme": "Darcula Theme from IntelliJ",
+    "workbench.iconTheme": "eq-material-theme-icons",
+    "vim.disableAnnoyingNeovimMessage": true,
+    "window.zoomLevel": 0,
+    "vsicons.dontShowNewVersionMessage": true,
+    "workbench.panel.location": "right",
+    "editor.multiCursorModifier": "ctrlCmd",
+    "[css]": {}
+}

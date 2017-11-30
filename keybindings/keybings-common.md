@@ -30,3 +30,9 @@ Cmd + I                 : close other tabs
 Ctrl + T                : open the terminal
 Alt + left              : go back to last edit pos
 Alt + right             : go forward
+Alt + T   				: open terminal here
+Cmd + alt + T        	: open terminal in project folder
+Cmd + left/right		: swith between editor/command tabs
+
+
+

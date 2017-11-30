@@ -42,7 +42,34 @@
 	{ "keys": ["ctrl+shift+forward_slash"], "command": "toggle_comment", "args": { "block": true } },
 	{ "keys": ["ctrl+shift+u"], "command": "upper_case" },
 	{ "keys": ["ctrl+shift+l"], "command": "lower_case" },
+	{ "keys": ["ctrl+shift+a"], "command": "alignment" },
+	{
+		"keys": ["super+i"],
+		"command": "close_others"
+	},
 
+	{ "keys": ["ctrl+t"], "command": "terminal_view_open", "args": {"cmd": "/bin/zsh", "title": "Terminal (Zsh)"}},
+	{ "keys": ["super+t"], "command": "terminal_view_open", "args": {"cmd": "/bin/zsh", "title": "Terminal (Zsh)"}},
+
+	{ "keys": ["shift+super+left"], "command": "focus_neighboring_group", "args": {"forward": false} },
+	{ "keys": ["shift+super+right"], "command": "focus_neighboring_group" },
+
+	{ "keys": ["alt+left"], "command": "jump_back" },
+	{ "keys": ["alt+right"], "command": "jump_forward" },
+
+	{ "keys": ["super+z"], "command": "undo" },
+	{ "keys": ["super+shift+z"], "command": "redo" },
+
+	{ 
+		"keys": ["ctrl+shift+q"], 
+		"command": "console_wrap",
+		"args": {"insert_before": false}
+	},
+	{ 
+		"keys": ["ctrl+shift+alt+q"], 
+		"command": "console_wrap",
+		"args": {"insert_before": true}
+	},
 	{
 		"keys": ["super+alt+1"],
 		"command": "set_layout",
@@ -126,5 +153,5 @@
 				[0, 1, 1, 2], [1, 1, 2, 2]
 			]
 		}
-	}
+	},
 ]
