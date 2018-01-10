@@ -95,6 +95,7 @@ Swap strings: https://packagecontrol.io/packages/SwapStrings
 Ember Template Component Split View:https://packagecontrol.io/packages/Ember%20Template%20Component%20Split%20View
 Ember CLI Snippets:https://packagecontrol.io/packages/Ember%20CLI%20Snippets
 Tabs shortcuts: https://packagecontrol.io/packages/TabsShortcuts
+pretty Json
 
 
 Start from Command line 

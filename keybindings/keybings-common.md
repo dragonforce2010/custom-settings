@@ -22,6 +22,7 @@ Alt + 1                 : show/hide sidebar
 Alt + o                 : reveal files in finder
 Alt + cmd + p           : copy path
 Cmd + /                 : single line comment 
+cmd + .                 : autocomplete   
 Ctrl + shift + /        : block lines comment
 Shift + cmd + f         : focus file in navigation bar
 Ctrl + shift + u        : convert to uppercase
