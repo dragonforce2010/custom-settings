@@ -1,6 +1,7 @@
 call plug#begin('~/.vim/plugged')
 
 Plug 'jnurmine/Zenburn'          " Colour Scheme
+Plug 'flazz/vim-colorschemes'     " More Color Schemes
 Plug 'kien/ctrlp.vim'            " Fuzzy file search
 Plug 'easymotion/vim-easymotion' " Allows you to quickly move to different parts of the file
 Plug 'Raimondi/delimitMate'      " Provides insert mode auto-completion for quotes, parens, etc.
@@ -60,6 +61,7 @@ map q: :q
 inoremap jk <ESC>
 " Type <Space>w to save file
 nnoremap <Leader>w :w<CR>
+nnoremap <Leader>v :vsplit<CR>
 " Type <Space>q to quit
 nnoremap <Leader>q :q<CR>
 
@@ -72,8 +74,8 @@ nnoremap <silent> p p`]
 vnoremap . :normal .<CR>
 
 " Tab shortcuts
-nnoremap D :tabnext<CR>
-nnoremap T :tabprev<CR>
+nnoremap T :tabnext<CR>
+nnoremap D :tabprev<CR>
 
 " Select word easily
 nnoremap vv viw
@@ -128,3 +130,7 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
 nnoremap <C-n> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
+
+
+" Inital Settings
+colorscheme wintersday
