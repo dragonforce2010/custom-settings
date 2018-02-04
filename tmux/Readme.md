@@ -1,0 +1,10 @@
+# Install tmux from github `https://github.com/tmuxinator/tmuxinator`
+`gem install tmuxinator`
+
+# Configure the tmux
+- download .tmux.conf from github `https://github.com/dragonforce2010/custom-settings/tree/master/tmux`
+
+# Settings reference
+`https://charlee.li/tmux-enhanced.html`
+
+
