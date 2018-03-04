@@ -1,10 +1,54 @@
 {
-    "workbench.colorTheme": "Darcula Theme from IntelliJ",
-    "workbench.iconTheme": "eq-material-theme-icons",
-    "vim.disableAnnoyingNeovimMessage": true,
-    "window.zoomLevel": 0,
-    "vsicons.dontShowNewVersionMessage": true,
-    "workbench.panel.location": "right",
+    "workbench.colorTheme": "Ayu Mirage",
+    "workbench.iconTheme": "material-icon-theme",
+    // "vim.disableAnnoyingNeovimMessage": true,
+    "window.zoomLevel": 2,
+    // "vsicons.dontShowNewVersionMessage": true,
+    // "workbench.panel.location": "right",
     "editor.multiCursorModifier": "ctrlCmd",
-    "[css]": {}
+    "[css]": {},
+    "sync.gist": "0baf8ef10b9c02ac2790fbbe86f1518e",
+    "sync.lastUpload": "2017-11-30T21:57:43.962Z",
+    "sync.autoDownload": false,
+    "sync.autoUpload": false,
+    "sync.lastDownload": "",
+    "sync.forceDownload": false,
+    "sync.anonymousGist": false,
+    "sync.host": "",
+    "sync.pathPrefix": "",
+    "sync.quietSync": false,
+    "sync.askGistName": false,
+    "terminal.integrated.fontFamily": "Meslo LG S for Powerline",
+    "files.exclude": {
+        "**/*.js": {
+            "when": "$(basename).ts"
+        },
+        ".D*": {},
+        "**/*.pyc": {},
+        "**/*.swp": {},
+        "**/*.un~": {},
+        "**/*__init__.py": {},
+        "**/*.ropeproject": {},
+        "**/*__pycache__": {}
+    },
+    "explorer.confirmDragAndDrop": false,
+
+    // keys go to normal mode from insert mode (default: "" disable)
+    "vimStyle.imapEsc": "jk",
+    "vimStyle.changeCursorStyle": true,
+    "files.associations": {
+        "*.h": "objective-c",
+        ".m": "objective-c",
+    },
+    // "python.linting.pylintArgs": [
+    //     "--rcfile=/Users/michaelz/Development/workspace/workspace4work/dragon/.pylintrc"
+    // ],
+    "python.linting.ignorePatterns": [
+        ".vscode/*.py",
+        "**/site-packages/**/*.py",
+        "tests/resource/*.*",
+    ],
+    "search.exclude": {
+        "tests/resource": true,
+    },
 }
