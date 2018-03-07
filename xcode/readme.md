@@ -15,3 +15,8 @@
         find ~/Library/Application\ Support/Developer/Shared/Xcode/Plug-ins -name Info.plist -maxdepth 3 | xargs -I{} defaults write {} DVTPlugInCompatibilityUUIDs -array-add `defaults read /Applications/Xcode.app/Contents/Info DVTPlugInCompatibilityUUID`
     ```
 - Restart the xcode and load all the bundles/plugins, now you can see they are working now.
+
+# plugins to install
+https://github.com/vampirewalk/ObjectGraph-Xcode
+https://github.com/kimsungwhee/KSHObjcUML
+

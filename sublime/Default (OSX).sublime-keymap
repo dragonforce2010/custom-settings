@@ -12,10 +12,13 @@
 	{ "keys": ["ctrl+shift+9"], "command": "fold_by_level", "args": {"level": 9} },
 	{ "keys": ["alt+d"], "command": "duplicate_line" },
 	{ "keys": ["super+d"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Delete Line.sublime-macro"} },
-	{ "keys": ["super+left"], "command": "prev_view" },
-	{ "keys": ["super+right"], "command": "next_view" },
+	{ "keys": ["super+j"], "command": "prev_view" },
+	{ "keys": ["super+k"], "command": "next_view" },
+	
+	{ "keys": ["super+shift+."], "command": "find_under_expand" },
+
 	{ "keys": ["alt+1"], "command": "toggle_side_bar" },
-	{ "keys": ["super+k"], "command": "find_under_expand" },
+	{ "keys": ["super+m"], "command": "find_under_expand" },
 	{ "keys": ["super+."], "command": "auto_complete" },
 	{ "keys": ["super+."], "command": "replace_completion_with_auto_complete", "context":
 		[
@@ -27,12 +30,12 @@
 	{ "keys": ["alt+up"], "command": "swap_line_up" },
 	{ "keys": ["alt+down"], "command": "swap_line_down" },
 	{"keys": ["ctrl+shift+f"], "command": "reindent", "args": {"single_line": false}},
-	{ "keys": ["super+up"], "command": "move_to", "args": {"to": "bol", "extend": false} },
-	{ "keys": ["super+down"], "command": "move_to", "args": {"to": "eol", "extend": false} },
-	{ "keys": ["ctrl+h"], "command": "show_panel", "args": {"panel": "find_in_files"} },
-	{ "keys": ["ctrl+h"], "command": "find_in_project"},
+	{ "keys": ["super+shift+;"], "command": "move_to", "args": {"to": "bol", "extend": false} },
+	{ "keys": ["super+;"], "command": "move_to", "args": {"to": "eol", "extend": false} },
+	{ "keys": ["super+shift+G"], "command": "show_panel", "args": {"panel": "find_in_files"} },
+	{ "keys": ["super+shift+h"], "command": "find_in_project"},
 	{ "keys": ["super+l"], "command": "show_overlay", "args": {"overlay": "goto", "text": ":"} },
-	{ "keys": ["ctrl+l"], "command": "expand_selection", "args": {"to": "line"} },
+	{ "keys": ["super+shift+l"], "command": "expand_selection", "args": {"to": "line"} },
 	{ "keys": ["super+p"], "command": "show_overlay", "args": {"overlay": "goto", "show_files": true} },
 	{ "keys": ["ctrl+shift+r"], "command": "show_overlay", "args": {"overlay": "goto", "show_files": true} },
 	{ "keys": ["super+o"], "command": "show_overlay", "args": {"overlay": "goto", "text": "@"} },
@@ -42,20 +45,24 @@
 	{ "keys": ["ctrl+shift+forward_slash"], "command": "toggle_comment", "args": { "block": true } },
 	{ "keys": ["ctrl+shift+u"], "command": "upper_case" },
 	{ "keys": ["ctrl+shift+l"], "command": "lower_case" },
+	{ "keys": ["shift+alt+r"], "command": "side_bar_rename" },
+	{ "keys": ["ctrl+u"], "command": "move", "args": {"by": "pages", "forward": false} },
+	{ "keys": ["ctrl+d"], "command": "move", "args": {"by": "pages", "forward": true} },
+	/*{ "keys": ["super+shift+o"], "command": "prompt_add_folder" },*/
 	{ "keys": ["ctrl+shift+a"], "command": "alignment" },
 	{
 		"keys": ["super+i"],
 		"command": "close_others"
 	},
 
-	{ "keys": ["ctrl+t"], "command": "terminal_view_open", "args": {"cmd": "/bin/zsh", "title": "Terminal (Zsh)"}},
 	{ "keys": ["super+t"], "command": "terminal_view_open", "args": {"cmd": "/bin/zsh", "title": "Terminal (Zsh)"}},
+	{ "keys": ["shift+super+t"], "command": "terminal_view_open", "args": {"cmd": "/bin/zsh", "title": "Terminal (Zsh)"}},
 
 	{ "keys": ["shift+super+left"], "command": "focus_neighboring_group", "args": {"forward": false} },
 	{ "keys": ["shift+super+right"], "command": "focus_neighboring_group" },
 
-	{ "keys": ["alt+left"], "command": "jump_back" },
-	{ "keys": ["alt+right"], "command": "jump_forward" },
+	{ "keys": ["alt+j"], "command": "jump_back" },
+	{ "keys": ["alt+k"], "command": "jump_forward" },
 
 	{ "keys": ["super+z"], "command": "undo" },
 	{ "keys": ["super+shift+z"], "command": "redo" },
