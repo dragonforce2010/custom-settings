@@ -47,7 +47,18 @@
                         }
                     },
                     "to": [{"key_code": "right_arrow"}]
+                },
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "m",
+                        "modifiers": {
+                            "mandatory": ["left_shift", "left_command"]
+                        }
+                    },
+                    "to": [{"pointing_button": "button2"}]
                 }
+
             ]
         }
     ]
