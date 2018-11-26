@@ -1,19 +1,18 @@
 {
-    "workbench.colorTheme": "Ayu Mirage",
+    "workbench.colorTheme": "One Dark Pro Vivid",
     "workbench.iconTheme": "material-icon-theme",
     // "vim.disableAnnoyingNeovimMessage": true,
-    "window.zoomLevel": 2,
+    "window.zoomLevel": 1,
     // "vsicons.dontShowNewVersionMessage": true,
     // "workbench.panel.location": "right",
     "editor.multiCursorModifier": "ctrlCmd",
     "[css]": {},
     "sync.gist": "0baf8ef10b9c02ac2790fbbe86f1518e",
-    "sync.lastUpload": "2017-11-30T21:57:43.962Z",
+    "sync.lastUpload": "2018-04-23T13:52:11.848Z",
     "sync.autoDownload": false,
     "sync.autoUpload": false,
     "sync.lastDownload": "",
     "sync.forceDownload": false,
-    "sync.anonymousGist": false,
     "sync.host": "",
     "sync.pathPrefix": "",
     "sync.quietSync": false,
@@ -48,7 +47,34 @@
         "**/site-packages/**/*.py",
         "tests/resource/*.*",
     ],
+    "python.linting.pylintArgs": ["--disable-ids","E1123"], //disable python sqlalchemy lint issue
     "search.exclude": {
         "tests/resource": true,
     },
+    "sync.removeExtensions": true,
+    "sync.syncExtensions": true,
+    "eslint.autoFixOnSave": true,
+    "gitlens.advanced.messages": {
+        "suppressLineUncommittedWarning": true,
+        "suppressShowKeyBindingsNotice": true
+    },
+    "gitlens.historyExplorer.enabled": true,
+    "nativescript.analytics.enabled": true,
+    "rubocop": {
+        "lint": true, //enable all lint cops.
+        "only": [/* array: Run only the specified cop(s) and/or cops in the specified departments. */],
+        "except": [/* array: Run all cops enabled by configuration except the specified cop(s) and/or departments. */],
+        "forceExclusion": true, //Add --force-exclusion option
+        "require": [/* array: Require Ruby files. */],
+        "rails": true //Run extra rails cops
+    },
+    "terminal.integrated.rendererType": "dom",
+    "java.errors.incompleteClasspath.severity": "ignore",
+    "gitlens.gitExplorer.location": "scm",
+    "gitlens.historyExplorer.location": "scm",
+    "gitlens.resultsExplorer.location": "scm",
+    "editor.largeFileOptimizations": false,
+    "eslint.alwaysShowStatus": true,
+    "files.autoSave": "off",
+    "gitlens.gitExplorer.files.layout": "tree"
 }
