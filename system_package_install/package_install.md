@@ -3,7 +3,8 @@
 brew install python
 pip3 install virtualenv
 ```
-install miniconda
+
+# install miniconda
 ```
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh
 bash Miniconda3-latest-MacOSX-x86_64.sh
@@ -17,12 +18,23 @@ source activate tensorflow
 conda deactivate
 ```
 
+# intall z
+brew install z
+
 
 # install rvm 
 ```
 \curl -sSL https://get.rvm.io | bash -s stable --ruby
 source /Users/michael.zhang/.rvm/scripts/rvms
 ```
+
+# install nvm
+```
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
+
+nvm install 8.12
+```
+
 # install ruby 2.5
 ```
 rvm install 2.5
