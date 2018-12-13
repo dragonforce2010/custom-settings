@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.alfred2.workflow.applereminder</string>
+	<key>category</key>
+	<string>Productivity</string>
+	<key>connections</key>
+	<dict>
+		<key>01CB5241-BC36-4AD0-B2D9-48A03B3BE020</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>F1D74157-FB89-455C-BBA9-356FBB8CB7AA</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>7EA40717-3618-4AB6-9683-FBFE0C87CA8F</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>D4D13AD6-A29A-409B-A1FB-22D9E11D033B</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>E20A08D6-59B0-4CED-853D-E9136B89A210</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>7EA40717-3618-4AB6-9683-FBFE0C87CA8F</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>F1D74157-FB89-455C-BBA9-356FBB8CB7AA</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>0C2AD65F-95F8-4534-B0E8-B27438FD7312</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Acidham</string>
+	<key>description</key>
+	<string>Add reminders to Reminders Inbox</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Apple Reminders</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>New Reminder created</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>0C2AD65F-95F8-4534-B0E8-B27438FD7312</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>rm</string>
+				<key>subtext</key>
+				<string>Format: reminder title;date;time</string>
+				<key>text</key>
+				<string>Add Reminder</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>01CB5241-BC36-4AD0-B2D9-48A03B3BE020</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)	set noDate to "no"	set theDayArray to {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"}		(* Explode query input *)	set myList to explode(";", q)		(* get the Title of the Reminder *)	set theReminder to item 1 of myList	(* try to get Date, tomorrow or next week on error set to "none" *)	try		set queryDay to item 2 of myList	on error		set queryDay to "none"	end try	(* try to get entered time. if only hours are provided at the missing ":00" *)	try		set queryTime to item 3 of myList		if queryTime does not contain ":" then			set queryTime to queryTime &amp; ":00"		end if	on error
+		(* Set default Reminder Time here *) 		set queryTime to "8:00"	end try		(* calculate due date when "today" was entered. If time string is emptpy add 3 hours from now *)	if queryDay contains "today" then		if queryTime is not equal to "" then			set theDate to date string of (current date)			set DueDate to date (theDate &amp; " " &amp; queryTime)		else			set DueDate to ((current date) + (3 * hours))		end if				(* calculate tomorrow's due date. If time string is empty get current time *)	else if queryDay contains "tomorrow" then		if queryTime is equal to "" then			set queryTime to time string of (current date)		end if		set theDate to date string of ((current date) + (1 * days))		set DueDate to date (theDate &amp; " " &amp; queryTime)				(* Calculate next weeks due date. If time string is empty get current time *)	else if queryDay contains "next week" then		if queryTime is equal to "" then			set queryTime to time string of (current date)		end if		set theDate to date string of ((current date) + (1 * weeks))		set DueDate to date (theDate &amp; " " &amp; queryTime)
+
+	(* if weekday was provided set due date to the next weekday*) 		else if theDayArray contains queryDay then				set theNext to list_position(queryDay, theDayArray)		set theNextWeekday to date string of (nextWeekday(theNext))		set DueDate to date (theNextWeekday &amp; " " &amp; queryTime)				(* if no day was provided set noDate flag to "yes" *)	else if queryDay contains "none" then		set noDate to "yes"				(* In case date where provided check if only DD and MM was provided and add current year *)	else if queryDay contains "." then		if queryTime is equal to "" then			set queryTime to time string of (current date)		end if		set expDate to explode(".", queryDay)		if (count of expDate) is equal to 2 then			set theYear to year of (current date)			set queryDay to queryDay &amp; "." &amp; theYear		end if		set DueDate to date (queryDay &amp; " " &amp; queryTime)			end if		(* Create reminder without a DueDate *)	if noDate is equal to "yes" then		tell application "Reminders"
+			set listName to name of default list			tell list listName				make new reminder with properties {name:theReminder}			end tell		end tell		set output to theReminder				(* Create reminder with DueDate *)	else		tell application "Reminders"
+			set listName to name of default list			tell list listName				make new reminder with properties {name:theReminder, remind me date:DueDate}			end tell					end tell		set output to theReminder &amp; "Due: " &amp; DueDate	end if	end alfred_script(* explode string with given delimter *)on explode(delimiter, input) -- explode(delimiter (String),input (String)) (Array)	local delimiter, input, ASTID	set ASTID to AppleScript's text item delimiters	try		set AppleScript's text item delimiters to delimiter		set input to text items of input		set AppleScript's text item delimiters to ASTID		return input --&gt; list	on error eMsg number eNum		set AppleScript's text item delimiters to ASTID		error "Can't explode: " &amp; eMsg number eNum	end tryend explode
+
+(* calculates next weekday as an integer *) on nextWeekday(wd)	set today to current date	set twd to weekday of today	if twd is wd then		set d to 7	else		set d to (7 + wd - twd) mod 7	end if	return today + (d * days)end nextWeekday
+
+(* returns position in a list *) on list_position(this_item, this_list)	repeat with i from 1 to the count of this_list		if item i of this_list is this_item then return i	end repeat	return 0end list_position</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>F1D74157-FB89-455C-BBA9-356FBB8CB7AA</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>type</key>
+			<string>alfred.workflow.output.largetype</string>
+			<key>uid</key>
+			<string>D4D13AD6-A29A-409B-A1FB-22D9E11D033B</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>rmhelp</string>
+				<key>text</key>
+				<string>Show help for Apple Reminder</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>E20A08D6-59B0-4CED-853D-E9136B89A210</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>return "Syntax: rm &lt;Title&gt;;&lt;due day&gt;;&lt;time&gt;
+
+Following options:
+- due day and time are empty: due day will be set to today with 3 hours from now
+- time is empty: Reminder will be set to date provided at given time
+- accepted date format: &lt;day&gt;.&lt;months&gt; or &lt;day&gt;.&lt;months&gt;.&lt;year&gt; or tomorrow, next week or &lt;weekday&gt;
+- weekday: Reminder will be set to the next weekday
+- accepted time format: &lt;hours&gt; or &lt;hours&gt;:&lt;minutes&gt;
+"</string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>7EA40717-3618-4AB6-9683-FBFE0C87CA8F</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>keyword</key>
+				<string>rmtoday</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>2</integer>
+				<key>runningsubtext</key>
+				<string>Search for today Reminders...</string>
+				<key>script</key>
+				<string>tell application "System Events"
+tell application "Reminders"		set allReminders to reminders whose completed is false	set allRemindersNames to {}		repeat with theItem in allReminders		if due date of theItem exists then			set theDueDate to due date of theItem			set reminderDate to short date string of theDueDate			set currentDate to short date string of (current date)			if reminderDate is equal to currentDate then				set allRemindersNames to allRemindersNames &amp; (name of theItem)			end if		end if	end repeat	end tell
+end tell-- prepare xml outputset xml to "&lt;?xml version=\"1.0\"?&gt;&lt;items&gt;"repeat with theItem in allRemindersNames
+set xml to xml &amp; "&lt;item arg=\"" &amp; theItem &amp; "\" uid=\"ssid\" valid=\"yes\"&gt;
+&lt;title&gt;" &amp; theItem &amp; "&lt;/title&gt;
+&lt;subtitle&gt;...&lt;/subtitle&gt;
+&lt;icon&gt;&lt;/icon&gt;&lt;/item&gt;"end repeat
+set xml to xml &amp; "&lt;/items&gt;"return xml
+</string>
+				<key>title</key>
+				<string>Show today's reminders</string>
+				<key>type</key>
+				<integer>6</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>5622E201-C197-44FE-9821-C90DA7DDB7C0</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>01CB5241-BC36-4AD0-B2D9-48A03B3BE020</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>0C2AD65F-95F8-4534-B0E8-B27438FD7312</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>5622E201-C197-44FE-9821-C90DA7DDB7C0</key>
+		<dict>
+			<key>ypos</key>
+			<real>250</real>
+		</dict>
+		<key>7EA40717-3618-4AB6-9683-FBFE0C87CA8F</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>D4D13AD6-A29A-409B-A1FB-22D9E11D033B</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>E20A08D6-59B0-4CED-853D-E9136B89A210</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>F1D74157-FB89-455C-BBA9-356FBB8CB7AA</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>

@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<workflow>
+  <name>ssh</name>
+  <version>1.3</version>
+  <bundle>net.isometry.alfred.ssh</bundle>
+  <updated>1464898155</updated>
+  <file>ssh.alfredworkflow</file>
+</workflow>

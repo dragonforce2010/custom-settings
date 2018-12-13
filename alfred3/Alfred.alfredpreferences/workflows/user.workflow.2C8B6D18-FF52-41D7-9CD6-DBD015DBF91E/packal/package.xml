@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<workflow>
+  <name>Open Current Finder Window in Terminal</name>
+  <version>1.0</version>
+  <bundle>com.watts.findertoiterm</bundle>
+  <updated>1466016821</updated>
+  <file>open_current_finder_window_in_terminal.alfredworkflow</file>
+</workflow>

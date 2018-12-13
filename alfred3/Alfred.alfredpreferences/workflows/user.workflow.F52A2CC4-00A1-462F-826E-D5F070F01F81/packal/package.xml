@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<workflow>
+  <name>Hyperlink</name>
+  <version>1.0</version>
+  <bundle>com.charliecm.hyperlink</bundle>
+  <updated>1464890418</updated>
+  <file>hyperlink.alfredworkflow</file>
+</workflow>
