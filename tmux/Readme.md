@@ -11,7 +11,7 @@ brew install tmux
 # set terminal to use tmux automatically
 ```
 if [ -z "$TMUX" ]; then
-  tmux attach -t default || tmux new -s default
+  tmux new -s default
 fi
 ```
 

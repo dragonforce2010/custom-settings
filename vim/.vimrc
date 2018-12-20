@@ -34,6 +34,8 @@ syntax on                       " enable syntax highlighting
 filetype plugin indent on       " indentation based on file type
 set re=1                        " This fixes the problem with slowness in ruby syntax highlighting 
 set number 		                  " Show line numbers
+set relativenumber
+set cursorline
 set showcmd 		                " show incomplete commands
 set scrolloff=5                 " lines to keep when scrolling
 set wrap                        " wrap text when displaying (does not alter the line)
@@ -77,6 +79,10 @@ vnoremap . :normal .<CR>
 nnoremap T :tabnext<CR>
 nnoremap D :tabprev<CR>
 
+" move line up/down
+nnoremap <S-Up> :m-2<CR>
+nnoremap <S-Down> :m+<CR>
+
 " Select word easily
 nnoremap vv viw
 
@@ -108,10 +114,6 @@ nmap , <Plug>(easymotion-bd-w)
 nnoremap <Leader>s :call RunNearestSpec()<CR>
 nnoremap <Leader>f  :call RunCurrentSpecFile()<CR>
 
-" Zenburn colorscheme
-let g:zenburn_transparent = 1
-colorscheme zenburn
-
 set nocompatible
 if has("autocmd")
   filetype indent plugin on
@@ -130,6 +132,10 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
 nnoremap <C-n> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
+
+" Zenburn colorscheme
+let g:zenburn_transparent = 1
+colorscheme zenburn
 
 
 " Inital Settings

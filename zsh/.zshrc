@@ -1,6 +1,6 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-DEFAULT_USER= whoami
+# DEFAULT_USER= whoami
 export TERM="xterm-256color"
 
 # Path to your oh-my-zsh installation.
@@ -11,14 +11,14 @@ export ZSH=/Users/michael.zhang/.oh-my-zsh
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 
 # Load Nerd Fonts with Powerlevel9k theme for Zsh
-POWERLEVEL9K_MODE='nerdfont-complete'
-source ~/powerlevel9k/powerlevel9k.zsh-theme
+# POWERLEVEL9K_MODE='nerdfont-complete'
+# source ~/powerlevel9k/powerlevel9k.zsh-theme
 # Customise the Powerlevel9k prompts
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(anaconda user dir vcs newline status)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
-POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
-POWERLEVEL9K_ALWAYS_SHOW_USER=true
-POWERLEVEL9K_CONTEXT_TEMPLATE="%n"
+# POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(anaconda user dir vcs newline status)
+# POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
+# POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
+# POWERLEVEL9K_ALWAYS_SHOW_USER=true
+# POWERLEVEL9K_CONTEXT_TEMPLATE="%n"
 
 # Load Zsh tools for syntax highlighting and autosuggestions
 HOMEBREW_FOLDER="/usr/local/share"
@@ -26,8 +26,8 @@ HOMEBREW_FOLDER="/usr/local/share"
 #ZSH_THEME="robbyrussell"
 #ZSH_THEME="agnoster"
 #ZSH_THEME="avit"
-ZSH_THEME="powerlevel9k/powerlevel9k"
-#ZSH_THEME="gnzh"
+#ZSH_THEME="powerlevel9k/powerlevel9k"
+ZSH_THEME="gnzh"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -71,8 +71,24 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(
+aws
+git
+docker
+github
+ng
+pip
+python
+ruby
+rvm
+tmux
+web-search
+yarn
+vscode
+z
+)
 
+source ~/.bash_profile
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -127,7 +143,6 @@ prompt_anaconda() {
 export PATH="$PATH:$HOME/.rvm/bin"
 
 . /usr/local/etc/profile.d/z.sh
-source ~/.bash_profile
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.alias

@@ -54,3 +54,24 @@ Example:
 ```
 youtube-dl -o '%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s' --playlist-start 32 https://www.youtube.com/watch?v=Sjv2_mLsUck&list=PLGNVlSJ5fH_WdgjWsgZuoUqnGrmOZTxdq&index=32
 ```
+
+# Mac OS Settings
+## Make your repeatable keys faster
+```
+defaults write -g InitialKeyRepeat -int 10 # normal minimum is 15 (225 ms)
+defaults write -g KeyRepeat -int 1 # normal minimum is 2 (30 ms)
+```
+
+## mac system shortcuts
+```
+shift + cmd + j: previous space
+shift + cmd + k: next space
+shift + cmd + i: show all the windows
+shift + cmd + o: show all the instances of a app
+```
+
+## mac softwares
+- irvue
+- contexts
+- alfred
+- sizeup
