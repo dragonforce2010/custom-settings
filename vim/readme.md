@@ -11,4 +11,7 @@ https://github.com/dragonforce2010/custom-settings
 
 3.Go to command line, type vim, and type command PlugInstall
 
-4.You’re all set, any time just type vim, you’re using vim! Enjoy
+4.Create a folder for vim undir
+mkdir ~/.undir
+
+5.You’re all set, any time just type vim, you’re using vim! Enjoy

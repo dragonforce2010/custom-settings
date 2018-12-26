@@ -53,7 +53,9 @@ set hlsearch                    " (normal) highlight search terms
 set incsearch                   " (normal) show found search term as you type
 set pastetoggle=<F2>            " (normal) when pasting ignore auto indentation rules"
 set wildmenu                    " (normal) menu autocomplete
+set undodir=~/.undodir
 
+let NERDTreeShowHidden=1
 let mapleader = "\<Space>"      " (normal) map leader to space bar
 
 " Stop that stupid window from popping up
