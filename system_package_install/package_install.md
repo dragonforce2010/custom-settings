@@ -75,3 +75,16 @@ shift + cmd + o: show all the instances of a app
 - contexts
 - alfred
 - sizeup
+
+# interesting commands to install
+https://www.jianshu.com/p/f921d4c59bb7
+https://www.zhihu.com/question/20273259
+```
+brew install boxes fortune cowsay ponysay sl asciiquarium myman
+```
+
+Watch starwars in command line, lol
+```
+brew install telnet
+telnet towel.blinkenlights.nl 
+```
