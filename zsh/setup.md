@@ -30,5 +30,17 @@ echo "alias ls='ls -G'" >> ~/.zshrc
 # source the .zshrc
 source ~/.zshrc
 
+# customized prompt
+```
+local ret_status="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ )"
+PROMPT='╭─$fg[yellow]$(pwd)$reset_color%} $(git_prompt_info)%{$fg[yellow]%}⚡%{$reset_color%}
+╰─%f➤ %f'
+
+ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[blue]%}git:(%{$fg[red]%}"
+ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%} "
+ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[blue]%}) %{$fg[yellow]%}✗"
+ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%})"
+```
+
 # for more details
 https://medium.com/the-code-review/make-your-terminal-more-colourful-and-productive-with-iterm2-and-zsh-11b91607b98c
