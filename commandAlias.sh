@@ -17,15 +17,4 @@ alias gco='git checkout'
 alias gcl="git branch --merged | grep -v '^*' | grep -v '^  master$' | xargs git branch -d"
 alias dzbot="docker exec zenbot_server_1 zenbot"
 alias vi='vim -p'
-up() {
-     local _levels=$1
-     if [ ! -z "$_levels" ] && [ $_levels -gt 0 ] && [ $_levels -lt 1000 ]
-     then
-          local _cmd=".."
-          for (( i=1 ; i<$_levels ; i++ ))
-          do
-               _cmd="$_cmd/.."
-          done
-          cd $_cmd
-     fi
-}
+
