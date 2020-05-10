@@ -1,22 +1,27 @@
 # install tmux
+
 brew install tmux
 
 # Install tmuxinator from github `https://github.com/tmuxinator/tmuxinator`
+
 `gem install tmuxinator`
 
 # Configure the tmux
+
 - download .tmux.conf from github `https://github.com/dragonforce2010/custom-settings/tree/master/tmux`
 
 # set your terminal to use tmux automically in ~/.bash_profile
+
 # set terminal to use tmux automatically
+
 ```
 if [ -z "$TMUX" ]; then
   tmux new -s default
 fi
 ```
 
-
 # Settings reference
+<<<<<<< HEAD
 `https://charlee.li/tmux-enhanced.html`
 
 # add more different themes
@@ -73,3 +78,7 @@ To preview a theme, type `prompt -p name`.
 Load the theme you like in `~/.zpreztorc` then open a new Zsh terminal window or tab.
 
 sorin theme Note that the 'git' module may be required for special symbols to appear, such as those on the right of the above image. Add 'git' to the pmodule list (under zstyle ':prezto:load' pmodule \ in your ~/.zpreztorc) to enable this module.
+=======
+
+`https://charlee.li/tmux-enhanced.html`
+>>>>>>> 7f6a370ee15efe1e53382345eea6dc98aff0a93f
