@@ -73,8 +73,8 @@ Launch Zsh:
 `zsh`
 Clone the repository:
 
-`git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
-Create a new Zsh configuration by copying the Zsh configuration files provided:`
+`git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"`
+Create a new Zsh configuration by copying the Zsh configuration files provided:
 
 ```
 setopt EXTENDED_GLOB
@@ -118,3 +118,6 @@ To preview a theme, type `prompt -p name`.
 Load the theme you like in `~/.zpreztorc` then open a new Zsh terminal window or tab.
 
 sorin theme Note that the 'git' module may be required for special symbols to appear, such as those on the right of the above image. Add 'git' to the pmodule list (under zstyle ':prezto:load' pmodule \ in your ~/.zpreztorc) to enable this module.
+
+参考配置
+`zstyle ':prezto:module:prompt' theme 'bigfade' 'red white grey white'`
