@@ -2,3 +2,4 @@
 .vscode
 *.swp
 .history
+node_modules/
