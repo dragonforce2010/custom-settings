@@ -8,3 +8,6 @@ Dev Softwares Need to install:
 - xcode
 - karabiner
 - afred3
+- 超级右键-iRightMouse(appStore)
+- hidden bar(appStore)
+- better menu bar(appStore)
