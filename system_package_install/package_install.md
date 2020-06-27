@@ -93,3 +93,6 @@ Watch starwars in command line, lol
 brew install telnet
 telnet towel.blinkenlights.nl 
 ```
+
+# install bat命令，一个更高级的cat显示命令
+```brew install bat```
